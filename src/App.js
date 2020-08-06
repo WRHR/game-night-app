@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
+import {Route, Switch, Redirect, Link} from 'react-router-dom'
 import './App.css';
 
+const testUser = {
+  name:{
+    first: 'John',
+    last: 'Smith'
+  },
+  email:'jonsmith@email.com',
+  gameLibrary:[],
+  events:[],
+  gamertags:{ps4:'jonnyboi'},
+}
 function App() {
+  const [user, setUser] = useState({})
+
+
+  useEffect(()=> {
+    setUser(testUser)
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
