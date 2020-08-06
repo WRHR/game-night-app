@@ -4,36 +4,31 @@ import {Link} from 'react-router-dom'
 export const Nav = styled.nav`
     display: flex;
     flex-direction: column;
-    width: 10%;
+    width: 65px;
     
     background-color: hsl(211, 87%, 25%);
-    /* align-items: center; */
     transition: width 0.2s, opacity 0.2s;
     
     &:hover {
-        width:20%;
+        width:120px;
     }
-
 `
 
 export const NavItems = styled.ul`
     display:flex;
     flex-direction: column;
-    padding:15px;
-    justify-content:space-around;
-    height: 100vh;
+    padding: 0 15px;
+    justify-content:center;
+    height: 900vh;
+    max-height: 90vh;
 `
 
 export const NavItem = styled(Link)`
     display:flex;
     align-items: center;
-    justify-content: space-between;
     color: hsl(35, 80%, 82%);
     text-decoration: none;
-
-    &::visited {
-        color: hsl(35, 80%, 82%);
-    }
+    margin: 20px 0;
 
     &:hover {
         color:hsl(47, 87%, 66%);
@@ -50,7 +45,9 @@ const fadeIn = keyframes`
 `
 
 export const NavDetail = styled.p`
+    margin-left: 10px;
     animation: ${fadeIn};
     animation-duration: 0.5s;
+    
 `
 

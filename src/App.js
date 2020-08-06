@@ -3,6 +3,7 @@ import {Route, Switch, Redirect, Link} from 'react-router-dom'
 import './App.css';
 import PrivateRoute from './components/PrivateRoute';
 import NavBar from './components/NavBar';
+import Header from './components/Header';
 
 
 
@@ -20,22 +21,17 @@ const testUser = {
 function App() {
   const [user, setUser] = useState(null)
 
-  const getUser = () => {
-    setUser(testUser)
+  const getUser = async () => {
+    await setUser(testUser)
   }
 
   useEffect(()=> {
     getUser()
-    
   },[])
-  console.log(user)
-
-
+  
   return (
     <div className="App">
-      <header>
-        <h1>Welcome back {user ? user.name.firstname : null}</h1>
-      </header>
+      <Header user={user}/>
       <NavBar />
       {/* <Switch>
         <PrivateRoute />
