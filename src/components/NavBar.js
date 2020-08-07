@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import {CalendarTodayRounded, PeopleAltRounded, SportsEsportsRounded} from '@material-ui/icons'
+import {CalendarTodayRounded, PeopleAltRounded, SportsEsportsRounded, HomeRounded} from '@material-ui/icons'
 import {Nav, NavItems, NavItem, NavDetail} from '../Styled/NavBar'
 
 const style={
@@ -19,7 +19,11 @@ const NavBar = (props) => {
     return(
         <Nav onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseEnter}>
             <NavItems>
-                <NavItem>
+                <NavItem to='/'>
+                    <HomeRounded style={style.iconstyle}/>
+                    {hovered ? <NavDetail >Home</NavDetail> :null}
+                </NavItem>
+                <NavItem to='/events'>
                     <CalendarTodayRounded style={style.iconstyle}/>
                     {hovered ? <NavDetail >Events</NavDetail> :null}
                 </NavItem>

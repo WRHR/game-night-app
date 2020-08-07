@@ -9,4 +9,20 @@
 
 body{
     background-image: linear-gradient(hsl(35, 80%, 82%), hsl(214, 31%, 26%));
+    background-size: 100vh 100vw;
+}
+
+.App{
+    display: flex;
+    flex-direction: column;
+}
+
+.page-display{
+    display: flex;
+
+}
+
+.page{
+    margin-left: 65px;
+    width: 100vw;
 }

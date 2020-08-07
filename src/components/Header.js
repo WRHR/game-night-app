@@ -1,7 +1,7 @@
 import React from 'react'
 import {HeaderContainer, Logout} from '../Styled/Header'
 
-export default function Header({user}){
+export default function Header(props){
 
     return(
         <HeaderContainer>

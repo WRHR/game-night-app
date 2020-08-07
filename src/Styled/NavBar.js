@@ -2,10 +2,11 @@ import styled, {keyframes} from 'styled-components'
 import {Link} from 'react-router-dom'
 
 export const Nav = styled.nav`
+    position: absolute;
     display: flex;
     flex-direction: column;
     width: 65px;
-    
+    z-index:3;
     background-color: hsl(211, 87%, 25%);
     transition: width 0.2s, opacity 0.2s;
     

@@ -1,25 +1,28 @@
 import React, {useState, useEffect} from 'react';
-import {Route, Switch, Redirect, Link} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 import './App.css';
 import PrivateRoute from './components/PrivateRoute';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
-
+import Home from './components/Home'
+import Events from './components/Events'
 
 
 const testUser = {
   name:{
-    firstname: 'John',
-    lastname: 'Smith'
+    firstname: 'Will',
+    lastname: 'Reeves'
   },
   email:'jonsmith@email.com',
   gameLibrary:[],
-  events:[],
+  events:[1,2,3,4],
   gamertags:{ps4:'jonnyboi'},
 }
 
 function App() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
+
+  // setUser(testUser)
 
   const getUser = async () => {
     await setUser(testUser)
@@ -31,12 +34,24 @@ function App() {
   
   return (
     <div className="App">
-      <Header user={user}/>
-      <NavBar />
-      {/* <Switch>
-        <PrivateRoute />
-
-      </Switch> */}
+      <Header/>
+      <div className='page-display'>
+        <NavBar />
+        <Switch>
+          <PrivateRoute 
+            exact 
+            path='/'
+            component={Home}
+          />
+          <PrivateRoute 
+            exact 
+            path='/events'
+            component={Events}
+            events={user.events}
+          />
+        <Redirect to='/' />
+        </Switch>
+      </div>
     </div>
   );
 }
