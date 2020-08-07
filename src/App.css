@@ -19,13 +19,27 @@ body{
 
 .page-display{
     display: flex;
-
+    height: 90vh;
 }
 
 .page{
     display: flex;
     flex-direction: column;
     margin-left: 65px;
-    width: 80vw;
+    
     max-height: 90vh;
+    width: calc(100vw - 65px);
+
+}
+
+.event-container{
+    display: flex;
+    height: 100%;
+}
+
+.fc{
+    width: 70%;
+    /* margin: 20px; */
+    background-color: hsl(214, 31%, 26%);
+    color: hsl(35, 80%, 82%);
 }

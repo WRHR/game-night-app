@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Route, Switch, Redirect} from 'react-router-dom'
+import {Switch, Redirect} from 'react-router-dom'
 import './App.css';
 import PrivateRoute from './components/PrivateRoute';
 import NavBar from './components/NavBar';
@@ -42,6 +42,7 @@ function App() {
             exact 
             path='/'
             component={Home}
+            user={user}
           />
           <PrivateRoute 
             exact 

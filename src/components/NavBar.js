@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
 import {CalendarTodayRounded, PeopleAltRounded, SportsEsportsRounded, HomeRounded} from '@material-ui/icons'
 import {Nav, NavItems, NavItem, NavDetail} from '../Styled/NavBar'
 
