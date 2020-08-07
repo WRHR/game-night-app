@@ -23,6 +23,9 @@ body{
 }
 
 .page{
+    display: flex;
+    flex-direction: column;
     margin-left: 65px;
-    width: 100vw;
+    width: 80vw;
+    max-height: 90vh;
 }

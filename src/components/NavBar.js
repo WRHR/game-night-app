@@ -27,11 +27,11 @@ const NavBar = (props) => {
                     <CalendarTodayRounded style={style.iconstyle}/>
                     {hovered ? <NavDetail >Events</NavDetail> :null}
                 </NavItem>
-                <NavItem>
+                <NavItem to='/mygames'>
                     <SportsEsportsRounded style={style.iconstyle}/>
                     {hovered ? <NavDetail>Games</NavDetail> :null}
                 </NavItem>
-                <NavItem>
+                <NavItem to='friends'>
                     <PeopleAltRounded style={style.iconstyle}/>
                     {hovered ? <NavDetail>Friends</NavDetail> :null}
                 </NavItem>
