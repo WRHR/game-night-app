@@ -29,8 +29,9 @@ export default function Events (props){
     useEffect(()=>{
         setMyEvents(eventList)
     },[])
-    
-    //Fetch Call to get events 
+
+
+    let filteredEvents = myEvents.filter(event => event.start.includes(selectedDay) )
 
     return(
         <div className='page'>
@@ -41,8 +42,15 @@ export default function Events (props){
                     setSelectedDay={setSelectedDay}
                 />
                 {selectedEvent 
-                    ? <EventDetail selectedEvent={selectedEvent} /> 
-                    : <DayDetail selectedDay={selectedDay} />
+                    ? <EventDetail 
+                        selectedEvent={selectedEvent} 
+                        setSelectedDay={setSelectedDay}
+                    /> 
+                    : <DayDetail 
+                        selectedDay={selectedDay} 
+                        filteredEvents={filteredEvents}
+                        setSelectedEvent={setSelectedEvent}
+                    />
                 }
             </div>
 

@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import {colors} from './Colors'
 
 export const DateContainer = styled.div`
+    display:flex;
+    flex-direction: column;
     width: 30%;
     max-width:30%; 
 `
@@ -12,3 +14,4 @@ export const Date = styled.h2`
     padding: 10px;
     height: 19px;
 `
+

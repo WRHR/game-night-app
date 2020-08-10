@@ -17,3 +17,7 @@ export const InfoBox = styled.div`
 export const Detail = styled.p`
     padding-bottom: 10px;
 `
+export const ThumbnailContainer = styled.div`
+    height: 100px;
+    
+`

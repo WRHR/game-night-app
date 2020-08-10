@@ -22,12 +22,14 @@ export const formatDay = (date) => {
 
 }
 
-const formatTime = (time) => {
+export const formatTime = (time) => {
     let [unformatedHours, mins] = time.split(':')
     let hours = parseInt(unformatedHours)
     if(hours === 12){
         return `${hours}:${mins}pm`
-    } else if(hours > 12){
+    } else if(hours === 0 || hours === 24){
+        return `12:${mins}am`
+    }else if(hours > 12){
         return `${hours-12}:${mins}pm`
     } else {
         return `${hours}:${mins}am`
@@ -36,7 +38,6 @@ const formatTime = (time) => {
 
 export const formatEventDate = (selectedEvent)=> {
     let [unformattedDate, unformattedTime] = selectedEvent.start.split('T')
-    
     
     let formattedTime = formatTime(unformattedTime)
 
@@ -56,7 +57,7 @@ export function getToday(){
     const monthLookup = {
         'Jan': '01',
         'Feb': '02', 
-        'Mar':'03',
+        'Mar': '03',
         'Apr': '04',
         'May': '05',
         'Jun': '06',
