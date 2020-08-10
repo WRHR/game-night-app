@@ -3,12 +3,14 @@ import {DateContainer, Date} from '../Styled/DayStyles'
 import { Title, InfoBox, Detail} from '../Styled/EventStyles'
 import {formatEventDate} from '../hooks/dateFormatting'
 
-export default function EventDetail({selectedEvent, setSelectedDay}){
+export default function EventDetail({selectedEvent,setSelectedEvent, setSelectedDay}){
 
     let {day, time} = formatEventDate(selectedEvent)
 
     const selectDay = () => {
-        
+        let day = selectedEvent.start.split('T')[0]
+        setSelectedDay(day)
+        setSelectedEvent(null)
     }
     return(
         <DateContainer>

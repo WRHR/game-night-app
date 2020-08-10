@@ -31,7 +31,10 @@ export default function Events (props){
     },[])
 
 
-    let filteredEvents = myEvents.filter(event => event.start.includes(selectedDay) )
+    let filteredEvents = myEvents
+        .filter(event => event.start.includes(selectedDay))
+    
+    filteredEvents.sort((a,b)=> Date.parse(a.start) - Date.parse(b.start))
 
     return(
         <div className='page'>
@@ -44,6 +47,7 @@ export default function Events (props){
                 {selectedEvent 
                     ? <EventDetail 
                         selectedEvent={selectedEvent} 
+                        setSelectedEvent={setSelectedEvent}
                         setSelectedDay={setSelectedDay}
                     /> 
                     : <DayDetail 
