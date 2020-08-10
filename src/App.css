@@ -22,15 +22,6 @@ body{
     height: 90vh;
 }
 
-.page{
-    display: flex;
-    flex-direction: column;
-    margin-left: 65px;
-    
-    max-height: 90vh;
-    width: calc(100vw - 65px);
-
-}
 
 .event-container{
     display: flex;

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {Page} from '../Styled/PageStyles'
 import EventCalender from './EventCalender'
 import EventDetail from './EventDetail'
 import DayDetail from './DayDetail'
@@ -37,7 +38,7 @@ export default function Events (props){
     filteredEvents.sort((a,b)=> Date.parse(a.start) - Date.parse(b.start))
 
     return(
-        <div className='page'>
+        <Page>
             <div className='event-container'>
                 <EventCalender 
                     myEvents={myEvents} 
@@ -57,8 +58,7 @@ export default function Events (props){
                     />
                 }
             </div>
-
-        </div>
+        </Page>
     )
 }
 
