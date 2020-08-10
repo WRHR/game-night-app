@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {DateContainer, Date} from '../Styled/DayStyles'
 import {formatDay} from '../hooks/dateFormatting'
 import EventThumbnail from './EventThumbnail'
-export default function DayDetail({selectedDay, filteredEvents, setSelectedEvent}){
+
+
+export default function DayDetail({selectedDay, filteredEvents, setSelectedEvent, setShowEventForm}){
 
     let day = formatDay(selectedDay)
 
@@ -15,8 +17,8 @@ export default function DayDetail({selectedDay, filteredEvents, setSelectedEvent
     return(
         <DateContainer>
             <Date>{day}</Date>
-            {filteredEvents.length > 0 ? displayEvents() : <p>You have no events scheduled for today</p>}
-            <button>Add a new event</button>
+            {filteredEvents.length > 0 ? displayEvents() : <p>You have no events scheduled</p>}
+            <button onClick={(e)=> setShowEventForm(true)}>Add an event</button>            
         </DateContainer>
     )
 }

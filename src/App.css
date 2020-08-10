@@ -10,7 +10,7 @@
     font-family: 'Roboto', sans-serif;
  */ 
 
- @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Roboto&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat&family=Roboto&display=swap');
 
 body{
     background-image: linear-gradient(hsl(35, 80%, 82%), hsl(214, 31%, 26%));

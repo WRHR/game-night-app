@@ -3,7 +3,9 @@ import {Page} from '../Styled/PageStyles'
 import EventCalender from './EventCalender'
 import EventDetail from './EventDetail'
 import DayDetail from './DayDetail'
+import EventForm from './EventForm'
 import {getToday} from '../hooks/dateFormatting'
+
 
 const eventList = [
     {
@@ -65,6 +67,7 @@ export default function Events (props){
     const [myEvents, setMyEvents] = useState([])
     const [selectedEvent, setSelectedEvent] = useState(null)
     const [selectedDay, setSelectedDay] = useState(getToday())
+    const [showEventForm, setShowEventForm] = useState(false)
 
     useEffect(()=>{
         setMyEvents(eventList)
@@ -94,9 +97,19 @@ export default function Events (props){
                         selectedDay={selectedDay} 
                         filteredEvents={filteredEvents}
                         setSelectedEvent={setSelectedEvent}
+                        setShowEventForm={setShowEventForm}
                     />
                 }
             </div>
+                {showEventForm 
+                    ? <EventForm 
+                        selectedDay={selectedDay} 
+                        setShowEventForm={setShowEventForm} 
+                        myEvents={myEvents}
+                        setMyEvents={setMyEvents}
+                    /> 
+                    : null
+                }
         </Page>
     )
 }
