@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {DateContainer, Date} from '../Styled/DayStyles'
 import {formatDay} from '../hooks/dateFormatting'
 import EventThumbnail from './EventThumbnail'

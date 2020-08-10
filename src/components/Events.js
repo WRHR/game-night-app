@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {Page} from '../Styled/PageStyles'
 import EventCalender from './EventCalender'
 import EventDetail from './EventDetail'
@@ -6,72 +6,12 @@ import DayDetail from './DayDetail'
 import EventForm from './EventForm'
 import {getToday} from '../hooks/dateFormatting'
 
-
-const eventList = [
-    {
-        id:'99', 
-        title: 'Borderlands!', 
-        start:'2020-08-07T08:30',
-        end:'2020-08-07', 
-        description: 'Gonna play some borderlands!',
-        game: {
-            id: 1, 
-            title: 'Borderlands 3',
-            rawg_id: 58617, 
-            image_url: "https://media.rawg.io/media/games/9f1/9f1891779cb20f44de93cef33b067e50.jpg",
-            platform: 'playstation'
-        }
-    },
-    {
-        id:'1', 
-        title: 'Borderlands!', 
-        start:'2020-08-09T14:30', 
-        end:'2020-08-09', 
-        description: 'Playing borderlands again. Gonna play some borderlands! Playing borderlands again. Gonna play some borderlands!Playing borderlands again. Gonna play some borderlands!Playing borderlands again. Gonna play some borderlands!Playing borderlands again. Gonna play some borderlands!',
-        game:{
-            id: 1, 
-            title: 'Borderlands 3',
-            rawg_id: 58617, 
-            image_url: "https://media.rawg.io/media/games/9f1/9f1891779cb20f44de93cef33b067e50.jpg",
-            platform: 'playstation'
-        }
-    },
-    {
-        id:'2', 
-        title: 'Pro League Practice', 
-        start:'2020-08-11T19:50', 
-        end:'2020-08-11',
-        description: 'We\'re practicing to go pro',
-        game:{
-            id: 2, 
-            title: 'Overwatch',
-            rawg_id: 58617, 
-            image_url: "https://media.rawg.io/media/games/4ea/4ea507ceebeabb43edbc09468f5aaac6.jpg",
-            platform: 'playstation'
-        }
-    },
-    {id:'5', title: 'Something', start:'2020-08-12T17:30', end:'2020-08-12'},
-    {id:'6', title: 'Test', start:'2020-08-12T14:30', end:'2020-08-12'},
-    {id:'3', title: 'Smash Fun Times', start:'2020-08-12T18:30', end:'2020-08-12'},
-    {
-        id:'4', 
-        title: 'Diablo 3 Ladder Climb',
-        description: 'Fightin some demons, gonna climb the ranked ladder!', 
-        start:'2020-08-20T12:30', 
-        end:'2020-08-20', 
-    },
-]
-
-
-export default function Events (props){
-    const [myEvents, setMyEvents] = useState([])
+export default function Events ({myEvents, setMyEvents}){
+    
     const [selectedEvent, setSelectedEvent] = useState(null)
     const [selectedDay, setSelectedDay] = useState(getToday())
     const [showEventForm, setShowEventForm] = useState(false)
 
-    useEffect(()=>{
-        setMyEvents(eventList)
-    },[])
 
 
     let filteredEvents = myEvents

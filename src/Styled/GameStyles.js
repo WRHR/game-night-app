@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 import {colors} from './Colors'
+
+
 export const GameImage = styled.div`
-    height:300px;
+    height:250px;
     background-image: url(${props => props.src});
     background-position: center;
-    background-size:735px;
+    background-size:cover;
     background-repeat: no-repeat;
     display: flex;
     align-items:flex-end;

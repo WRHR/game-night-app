@@ -29,9 +29,9 @@ export default function EventForm({selectedDay, setShowEventForm, myEvents, setM
                 <input type='text' name='title' value={title} onChange={(e)=>setTitle(e.target.value)}/> 
                 <label>Day:</label>
                 <input type='date' name='date' value={eventDate} onChange={(e)=> setEventDate(e.target.value)}/>
-                <label>Start Time</label>
+                <label>Start Time:</label>
                 <input type='time' name='startTime' value={startTime} onChange={(e)=> setStartTime(e.target.value)} />
-                <label>Description:</label>
+                <label>Details:</label>
                 <textarea 
                     name='description' 
                     value={description} 
