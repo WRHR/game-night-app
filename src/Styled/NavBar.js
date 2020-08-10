@@ -1,5 +1,6 @@
 import styled, {keyframes} from 'styled-components'
 import {Link} from 'react-router-dom'
+import {colors} from './Colors'
 
 export const Nav = styled.nav`
     position: absolute;
@@ -7,7 +8,7 @@ export const Nav = styled.nav`
     flex-direction: column;
     width: 65px;
     z-index:3;
-    background-color: hsl(211, 87%, 25%);
+    background-color: ${colors.black};
     transition: width 0.2s, opacity 0.2s;
     
     &:hover {
@@ -27,16 +28,16 @@ export const NavItems = styled.ul`
 export const NavItem = styled(Link)`
     display:flex;
     align-items: center;
-    color: hsl(35, 80%, 82%);
+    color: ${colors.white};
     text-decoration: none;
     margin: 20px 0;
 
     &:hover {
-        color:hsl(47, 87%, 66%);
+        color:${colors.yellow};
     }
 
     &:active {
-        color:hsl(47, 87%, 66%);
+        color:${colors.yellow};
     }
 `
 
