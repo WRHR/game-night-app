@@ -5,16 +5,26 @@
     indigo dye -- hsl(211, 87%, 25%)
     cerise -- hsl(345, 67%, 55%)
     orange yellow - hsl(47, 87%, 66%)
+
+    font-family: 'Bungee', cursive;
+    font-family: 'Roboto', sans-serif;
  */ 
+
+ @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Roboto&display=swap');
 
 body{
     background-image: linear-gradient(hsl(35, 80%, 82%), hsl(214, 31%, 26%));
     background-size: 100vh 100vw;
+    font-family: 'Roboto', sans-serif;
 }
 
 .App{
     display: flex;
     flex-direction: column;
+}
+
+h1{
+    font-family: 'Bungee', cursive;
 }
 
 .page-display{
