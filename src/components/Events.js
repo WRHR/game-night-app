@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import EventCalender from './EventCalender'
 import EventDetail from './EventDetail'
+import DayDetail from './DayDetail'
+import {getToday} from '../hooks/dateFormatting'
 
 const eventList = [
     {id:'99', title: 'Borderlands!', start:'2020-08-07T08:30', end:'2020-08-07', description: 'Gonna play some borderlands!'},
@@ -18,13 +20,16 @@ const eventList = [
     },
 ]
 
+
 export default function Events (props){
     const [myEvents, setMyEvents] = useState([])
     const [selectedEvent, setSelectedEvent] = useState(null)
+    const [selectedDay, setSelectedDay] = useState(getToday())
 
     useEffect(()=>{
         setMyEvents(eventList)
     },[])
+    
     //Fetch Call to get events 
 
     return(
@@ -32,10 +37,13 @@ export default function Events (props){
             <div className='event-container'>
                 <EventCalender 
                     myEvents={myEvents} 
-                    selectedEvent={selectedEvent}
                     setSelectedEvent={setSelectedEvent}
+                    setSelectedDay={setSelectedDay}
                 />
-                {selectedEvent ? <EventDetail selectedEvent={selectedEvent} /> : null}
+                {selectedEvent 
+                    ? <EventDetail selectedEvent={selectedEvent} /> 
+                    : <DayDetail selectedDay={selectedDay} />
+                }
             </div>
 
         </div>

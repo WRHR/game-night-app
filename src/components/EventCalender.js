@@ -3,17 +3,11 @@ import FullCalender from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 
-export default function EventCalender({myEvents, selectedEvent, setSelectedEvent}){
-    const customButtons = {
-        testButton: {
-            text:'+',
-            click: ()=> alert('Clicked test')
-        }
-    }
-    
+export default function EventCalender({myEvents, setSelectedEvent, setSelectedDay}){
+ 
     const dayInfo = (info) => {
-        console.log(info)
-    
+        setSelectedEvent(null)
+        setSelectedDay(info.dateStr)
     }
     
     const eventInfo= (info) => {
@@ -27,7 +21,6 @@ export default function EventCalender({myEvents, selectedEvent, setSelectedEvent
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView='dayGridMonth'
         events={myEvents}
-        customButtons={customButtons}
         headerToolbar={{
             left:'prev,next today', 
             center: 'title',
