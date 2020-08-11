@@ -11,13 +11,35 @@ export const Title = styled.h1`
 
 export const InfoBox = styled.div`
     padding: 10px; 
-    border: 1px solid ${colors.blue};
 `
 
 export const Detail = styled.p`
     padding-bottom: 10px;
 `
 export const ThumbnailContainer = styled.div`
-    height: 100px;
+    height: 150px;
+    background-image: 
+        linear-gradient(270deg,
+            rgba(0, 0, 0, 0.0), 
+            rgba(255, 255, 255, 1.0)),
+            url(${props => props.src});
+    background-size:cover;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size:20px;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    
+    &:hover {
+        color:${colors.white};
+        -webkit-text-stroke: 1px ${colors.black};
+        background-image:
+        linear-gradient(270deg,
+            rgba(0, 0, 0, 0.0), 
+            rgba(0, 0, 0, 0.0)),
+            url(${props => props.src});
+    }
+
     
 `

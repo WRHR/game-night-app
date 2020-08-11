@@ -17,11 +17,13 @@ export default function EventDetail({selectedEvent,setSelectedEvent, setSelected
         <DateContainer>
             <Date onClick={selectDay}>{day}</Date>
             <Title>{selectedEvent.title}</Title>
-            <GameImage src={selectedEvent.game.image_url}>
+            <GameImage src={selectedEvent.game.background_url}>
             <GameTitleOverlay>{selectedEvent.game.title}</GameTitleOverlay>
             </GameImage>
             <InfoBox>
-            <Detail>Group up at: {time}</Detail>
+                <h2>Starts at:</h2>
+                <Detail>{time}</Detail>
+                <h2>Details:</h2>
                 <Detail>{selectedEvent.description}</Detail>
             </InfoBox>
         </DateContainer>

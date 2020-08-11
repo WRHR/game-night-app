@@ -39,7 +39,7 @@ export default function EventForm({selectedDay, setShowEventForm, myEvents, setM
                     rows="7" 
                     cols="40"
                 />
-                <button>Add Event</button>
+                <button type='submit'>Add Game Night</button>
             </Form>
         </EventFormContainer>
     )

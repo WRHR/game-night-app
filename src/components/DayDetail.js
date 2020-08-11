@@ -18,7 +18,7 @@ export default function DayDetail({selectedDay, filteredEvents, setSelectedEvent
         <DateContainer>
             <Date>{day}</Date>
             {filteredEvents.length > 0 ? displayEvents() : <p>You have no events scheduled</p>}
-            <button onClick={(e)=> setShowEventForm(true)}>Add an event</button>            
+            <button onClick={(e)=> setShowEventForm(true)}>Plan a Game Night!</button>            
         </DateContainer>
     )
 }

@@ -13,7 +13,7 @@
  @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat&family=Roboto&display=swap');
 
 body{
-    background-image: linear-gradient(hsl(35, 80%, 82%), hsl(214, 31%, 26%));
+
     background-size: 100vh 100vw;
     font-family: 'Roboto', sans-serif;
 }
@@ -40,7 +40,25 @@ h1{
 
 .fc{
     width: 70%;
-    /* margin: 20px; */
-    background-color: hsl(211, 87%, 25%);
-    color: hsl(35, 80%, 82%);
+    padding: 65px 0;
+    padding-left: 65px;
+    border: none;
 }
+
+
+
+.fc-theme-standard .fc-scrollgrid {
+    border: 0px solid #ddd; 
+    border: 0px solid var(--fc-border-color, #ddd); 
+}
+button{
+    width: max-content;
+    border-radius: 1rem;
+    padding: 15px;
+    background-color: hsl(211, 87%, 25%);
+    color: hsl(35, 0%, 100%);
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+}
+

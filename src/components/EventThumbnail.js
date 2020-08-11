@@ -9,9 +9,9 @@ export default function EventThumbnail({event, setSelectedEvent}){
     }
 
     return(
-        <ThumbnailContainer onClick={setEvent}>
+        <ThumbnailContainer src={event.game.background_url} onClick={setEvent}>
             <h1>{event.title}</h1>
-            <p>{time}</p>
+            <h1>{time}</h1>
         </ThumbnailContainer>
     )
 }

@@ -18,3 +18,9 @@ export const GameTitleOverlay = styled.h1`
     -webkit-text-stroke: 1px ${colors.black};
     font-size: 30px;
 `
+
+export const GamesContainer = styled.div`
+    display:flex;
+    flex-flow:row wrap;
+
+`
