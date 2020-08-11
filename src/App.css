@@ -58,7 +58,7 @@ h1{
 .fc-daygrid-day{
     transition: all ease 0.2s;
     cursor: pointer;
-    box-shadow: 1px 1px 1px hsl(220, 5%, 78%);
+    /* box-shadow: 1px 1px 1px hsl(220, 5%, 78%); */
 }
 
 .fc-daygrid-day:hover {
