@@ -45,12 +45,40 @@ h1{
     border: none;
 }
 
-
-
 .fc-theme-standard .fc-scrollgrid {
-    border: 0px solid #ddd; 
-    border: 0px solid var(--fc-border-color, #ddd); 
+    border: none !important;
+    border: none !important; 
 }
+
+/* .fc-theme-standard td, .fc-theme-standard th {
+    border: none !important;
+    border: none !important;
+} */
+
+.fc-daygrid-day{
+    transition: all ease 0.2s;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px hsl(220, 5%, 78%);
+}
+
+.fc-daygrid-day:hover {
+    box-shadow: 5px 5px 15px hsl(214, 31%, 26%);
+}
+
+/* td{
+    transition: all ease 0.2s;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px hsl(220, 5%, 78%);
+}
+
+ td:hover {
+    box-shadow: 5px 5px 15px hsl(214, 31%, 26%);
+} */
+
+.fc-toolbar-title{
+    font-family: 'Bungee', cursive;
+}
+
 button{
     width: max-content;
     border-radius: 1rem;
