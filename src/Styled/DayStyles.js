@@ -7,14 +7,16 @@ export const DateContainer = styled.div`
     width: 30%;
     max-width:30%; 
     padding: 65px 65px;
-    justify-content:center;
-    /* padding-right: 65px; */
+    max-height: inherit;
+    overflow-y: scroll;
+    align-items:center;
 `
 export const Date = styled.h2`
     background-color: ${colors.blue};
     color: ${colors.white};
     text-align: center;
-    padding: 10px;
+    padding: 10px 0px;
     height: 19px;
+    width:100%;
 `
 

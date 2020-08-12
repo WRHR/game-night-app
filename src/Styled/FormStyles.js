@@ -9,9 +9,7 @@ export const EventFormContainer = styled.div`
     z-index:5;
     display: flex;
     flex-direction:column;
-   
     background-color:${colors.black};
-    
     ` 
 export const Form = styled.form`
     padding: 20px;
@@ -33,6 +31,7 @@ export const FormTitle = styled.h1`
 `
 
 export const CloseButton = styled.button`
-    height:auto;
-    width: auto;
+    padding: 3px 5px;
+    margin:0;
+    border-radius: 0;
 `

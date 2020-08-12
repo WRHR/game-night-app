@@ -28,7 +28,9 @@ export default function EventCalender({myEvents, setSelectedEvent, setSelectedDa
         }}
         dateClick={dayInfo}
         eventClick={eventInfo}
+        dayMaxEvents={true}
         handleWindowResize={true}
+        // editable={true}
     />
     )
 }

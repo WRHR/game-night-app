@@ -7,10 +7,12 @@ export const Title = styled.h1`
     text-align: center;
     font-size: 20px;
     padding: 10px 0;
+    width:100%;
 `
 
 export const InfoBox = styled.div`
-    padding: 10px; 
+    padding: 10px;
+    width:100%; 
 `
 
 export const Detail = styled.p`
@@ -30,6 +32,7 @@ export const ThumbnailContainer = styled.div`
     font-size:20px;
     cursor: pointer;
     transition: 0.3s ease all;
+    width:100%;
     
     &:hover {
         color:${colors.white};
