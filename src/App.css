@@ -32,6 +32,7 @@ h1{
 .page-display{
     display: flex;
     height: 90vh;
+    max-height: 90vh;
 }
 
 

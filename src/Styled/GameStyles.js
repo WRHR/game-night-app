@@ -24,5 +24,6 @@ export const GameTitleOverlay = styled.h1`
 export const GamesContainer = styled.div`
     display:flex;
     flex-flow:row wrap;
-
+    overflow-y: auto;
+    max-height: 50%;
 `

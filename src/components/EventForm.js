@@ -21,7 +21,7 @@ export default function EventForm({selectedDay, setShowEventForm, myEvents, setM
             game
         }
         setMyEvents([...myEvents, event])
-        
+        setShowEventForm(false)
     }
 
     const handleClick= (e) => {
@@ -38,12 +38,12 @@ export default function EventForm({selectedDay, setShowEventForm, myEvents, setM
     return(
         <EventFormContainer>
             <FormTitleContainer>
-                <FormTitle>New Event</FormTitle> 
+                <FormTitle>New Game Night</FormTitle> 
                 <CloseButton onClick={(e)=> setShowEventForm(false)}>X</CloseButton>
             </FormTitleContainer>
             <div style={{display:'flex'}}>
                 <Form onSubmit={handleSubmit}>
-                    {game ? <h2>Game:{game.title}</h2> :null}
+                    {game ? <h2>Game: {game.title}</h2> :null}
                     <button onClick={handelSelectGame}>Select a Game</button>
                     <label>Title:</label>
                     <input type='text' name='title' value={title} onChange={(e)=>setTitle(e.target.value)}/> 
