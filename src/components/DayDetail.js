@@ -1,6 +1,6 @@
 import React from 'react'
 import {DateContainer, Date} from '../Styled/DayStyles'
-import {formatDay} from '../hooks/dateFormatting'
+import {formatDay} from '../helpers/dateFormatting'
 import EventThumbnail from './EventThumbnail'
 
 

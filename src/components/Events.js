@@ -4,7 +4,7 @@ import EventCalender from './EventCalender'
 import EventDetail from './EventDetail'
 import DayDetail from './DayDetail'
 import EventForm from './EventForm'
-import {getToday} from '../hooks/dateFormatting'
+import {getToday} from '../helpers/dateFormatting'
 
 export default function Events ({myEvents, setMyEvents}){
     

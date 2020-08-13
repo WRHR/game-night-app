@@ -2,7 +2,7 @@ import React from 'react'
 import {DateContainer, Date} from '../Styled/DayStyles'
 import { Title, InfoBox, Detail} from '../Styled/EventStyles'
 import { GameImage, GameTitleOverlay } from '../Styled/GameStyles'
-import {formatEventDate} from '../hooks/dateFormatting'
+import {formatEventDate} from '../helpers/dateFormatting'
 
 export default function EventDetail({selectedEvent,setSelectedEvent, setSelectedDay}){
 

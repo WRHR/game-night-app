@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThumbnailContainer } from '../Styled/EventStyles'
-import { formatEventDate } from '../hooks/dateFormatting'
+import { formatEventDate } from '../helpers/dateFormatting'
 export default function EventThumbnail({event, setSelectedEvent}){
     let {day, time} = formatEventDate(event)
 

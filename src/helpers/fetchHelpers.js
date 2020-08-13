@@ -5,7 +5,7 @@ const registerUrl = `${usersUrl}/register`
 const eventsUrl = `${baseUrl}/events`
 const gamesUrl = `${baseUrl}/games`
 
-const useLogin = (body) => {
+const fecthLogin = (body) => {
     fetch(loginUrl, {
         method:'POST',
         headers:{'Content-Type':'application/json'},
@@ -15,7 +15,7 @@ const useLogin = (body) => {
     .then(result => {return result})
 }
 
-const useRegister = (body) => {
+const fetchRegister = (body) => {
     fetch(registerUrl, {
         method:'POST',
         headers:{'Content-Type':'application/json'},
@@ -25,7 +25,7 @@ const useRegister = (body) => {
     .then(result => {return result})
 }
 
-const useGetEvents = () => {
+const fecthGetEvents = () => {
     fetch(eventsUrl, {
         method:'GET'
     })
@@ -33,7 +33,7 @@ const useGetEvents = () => {
     .then(result => { return result })
 }
 
-const usePostEvent = (body) => {
+const fetchPostEvent = (body) => {
     fetch(eventsUrl, {
         method:'POST',
         headers:{
@@ -46,7 +46,7 @@ const usePostEvent = (body) => {
     .then(result => { return result})
 }
 
-const usePostGame = (body) => {
+const fetchPostGame = (body) => {
     fetch(gamesUrl,{
         method:'POST',
         headers: {
