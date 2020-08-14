@@ -6,13 +6,17 @@ import DayDetail from './DayDetail'
 import EventForm from './EventForm'
 import {getToday} from '../helpers/dateFormatting'
 
-export default function Events ({myEvents, setMyEvents}){
+export default function Events(
+    {
+        myEvents, 
+        setMyEvents, 
+        showGameDetail, 
+        setShowGameDetail
+    }){
     
     const [selectedEvent, setSelectedEvent] = useState(null)
     const [selectedDay, setSelectedDay] = useState(getToday())
     const [showEventForm, setShowEventForm] = useState(false)
-
-
 
     let filteredEvents = myEvents
         .filter(event => event.start.includes(selectedDay))
@@ -32,6 +36,8 @@ export default function Events ({myEvents, setMyEvents}){
                         selectedEvent={selectedEvent} 
                         setSelectedEvent={setSelectedEvent}
                         setSelectedDay={setSelectedDay}
+                        showGameDetail={showGameDetail}
+                        setShowGameDetail={setShowGameDetail}
                     /> 
                     : <DayDetail 
                         selectedDay={selectedDay} 

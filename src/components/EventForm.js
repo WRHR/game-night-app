@@ -4,7 +4,14 @@ import EventGameSelect from './EventGameSelect'
 import {eventsUrl} from '../helpers/fetchHelpers'
 
 
-export default function EventForm({selectedDay, setShowEventForm, myEvents, setMyEvents}){
+export default function EventForm(
+    {
+        selectedDay, 
+        setShowEventForm, 
+        myEvents, 
+        setMyEvents
+    }){
+        
     const [title, setTitle] = useState('')
     const [eventDate, setEventDate] = useState(selectedDay)
     const [startTime, setStartTime] = useState('')

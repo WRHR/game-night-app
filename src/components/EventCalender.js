@@ -3,7 +3,13 @@ import FullCalender from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 
-export default function EventCalender({myEvents, setSelectedEvent, setSelectedDay}){
+export default function EventCalender(
+    {
+        myEvents, 
+        setSelectedEvent, 
+        setSelectedDay, 
+    })
+    {
  
     const dayInfo = (info) => {
         setSelectedEvent(null)

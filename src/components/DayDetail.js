@@ -4,7 +4,13 @@ import {formatDay} from '../helpers/dateFormatting'
 import EventThumbnail from './EventThumbnail'
 
 
-export default function DayDetail({selectedDay, filteredEvents, setSelectedEvent, setShowEventForm}){
+export default function DayDetail(
+    {
+        selectedDay, 
+        filteredEvents, 
+        setSelectedEvent, 
+        setShowEventForm, 
+    }){
 
     let day = formatDay(selectedDay)
 

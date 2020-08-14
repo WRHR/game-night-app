@@ -4,7 +4,14 @@ import { Title, InfoBox, Detail} from '../Styled/EventStyles'
 import { GameImage, GameTitleOverlay } from '../Styled/GameStyles'
 import {formatEventDate} from '../helpers/dateFormatting'
 
-export default function EventDetail({selectedEvent,setSelectedEvent, setSelectedDay}){
+export default function EventDetail(
+    {
+        selectedEvent,
+        setSelectedEvent, 
+        setSelectedDay,
+        showGameDetail,
+        setShowGameDetail
+    }){
 
     let {day, time} = formatEventDate(selectedEvent)
 
@@ -17,7 +24,7 @@ export default function EventDetail({selectedEvent,setSelectedEvent, setSelected
         <DateContainer>
             <Date onClick={selectDay}>{day}</Date>
             <Title>{selectedEvent.title}</Title>
-            <GameImage src={selectedEvent.game.background_url}>
+            <GameImage onClick={(e)=>{setShowGameDetail(selectedEvent.game)}} src={selectedEvent.game.background_url}>
                 <GameTitleOverlay>{selectedEvent.game.title}</GameTitleOverlay>
             </GameImage>
             <InfoBox>
