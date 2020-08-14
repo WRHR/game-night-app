@@ -28,9 +28,7 @@ function App() {
 
   const getUserEvents = async (userEvents) => { 
     let {events} = await fetch(eventsUrl).then(res => res.json())
-    console.log(events)
     let filteredEvents = events.filter(event => userEvents.includes(event._id))
-    console.log(filteredEvents)
     setMyEvents(filteredEvents)
   }
 
