@@ -12,7 +12,6 @@ export default function EventCalender({myEvents, setSelectedEvent, setSelectedDa
     
     const eventInfo= (info) => {
         let pickedEvent = myEvents.filter(event => event._id === info.event._def.extendedProps._id)[0]
-        console.log(info.event._def.extendedProps._id)
         setSelectedEvent(pickedEvent)
     }
 

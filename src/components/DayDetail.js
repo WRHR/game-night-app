@@ -10,7 +10,7 @@ export default function DayDetail({selectedDay, filteredEvents, setSelectedEvent
 
     const displayEvents = () => {
         return filteredEvents.map(event => {
-            return <EventThumbnail key={event.id} event={event} setSelectedEvent={setSelectedEvent} />
+            return <EventThumbnail key={event._id} event={event} setSelectedEvent={setSelectedEvent} />
         })
     }
 
