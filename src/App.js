@@ -8,6 +8,7 @@ import Home from './components/Home'
 import Events from './components/Events'
 import Games from './components/Games'
 import Login from './components/Login';
+import {profileUrl} from './helpers/fetchHelpers'
 
 // const testUser = {
 //   name:{
@@ -127,8 +128,13 @@ function App() {
   const [myEvents, setMyEvents] = useState([])
   // setUser(testUser)
 
-  const getUser = async () => {
-    await setUser({})
+  const authorizeUser = () => {
+    fetch(profileUrl, {
+      method:'GET',
+      headers:{ "Authorization": `Bearer ${localStorage.token}`}
+    })
+    .then(res => res.json())
+    .then(result => setUser(result.user))
   }
 
   // const getUserEvents = () => {
@@ -140,7 +146,9 @@ function App() {
   // }
 
   useEffect(()=> {
-    // getUser()
+    if(localStorage.token){
+      authorizeUser()
+    }
     // getUserEvents()
   },[])
   

@@ -2,6 +2,7 @@ const baseUrl = 'http://localhost:5000'
 export const usersUrl = `${baseUrl}/users`
 export const loginUrl = `${usersUrl}/login`
 export const registerUrl = `${usersUrl}/register`
+export const profileUrl = `${usersUrl}/profile`
 export const eventsUrl = `${baseUrl}/events`
 export const gamesUrl = `${baseUrl}/games`
 
