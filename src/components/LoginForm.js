@@ -1,17 +1,29 @@
 import React, {useState} from 'react'
-import {fetchLogin} from '../helpers/fetchHelpers'
+import {loginUrl} from '../helpers/fetchHelpers'
 
 export default function LoginForm({setUser, setFormToggle}){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [errors, setErrors] = useState([])
 
     const handleLogin = async (e) => {
         e.preventDefault()
         let body = { email, password }
 
-        console.log(body)
-        let result = await fetchLogin(body)
-        localStorage.setItem('token', result.token)
+        fetch(loginUrl, {
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify(body)
+        })
+        .then(res => res.json())
+        .then(results => {
+            if(results.errors){
+                setErrors(results.errors)
+            }else{
+                localStorage.setItem('token', results.token)
+                setUser(results.user)
+            }
+        })
 
     }
     return(

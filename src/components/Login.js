@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import LoginFrom from './LoginForm'
 import LoginForm from './LoginForm'
 import RegistrationFrom from './RegistrationForm'
 export default function Login({setUser}){

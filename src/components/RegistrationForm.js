@@ -1,21 +1,33 @@
 import React, {useState} from 'react'
-import { fetchRegister } from '../helpers/fetchHelpers'
+import { registerUrl } from '../helpers/fetchHelpers'
 
 export default function RegistrationFrom({setUser, setFormToggle}){
     const [first, setFirst] = useState('')
     const [last, setLast] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [errors, setErrors] =useState([])
 
     const handleLogin = async (e) => {
         e.preventDefault()
         let body = { name:{first, last},email, password }
-
-        console.log(body)
-        let result = await fetchRegister(body)
-        localStorage.setItem('token', result.token)
-
+        fetch(registerUrl, {
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify(body)
+        })
+        .then(res => res.json())
+        .then(results => {
+            if(results.errors){
+                setErrors(results.errors)
+            }else{
+                localStorage.setItem('token', results.token)
+                setUser(results.user)
+            }
+        })
     }
+
+
     return(
         <form onSubmit={handleLogin}>
             <h2>Login</h2>

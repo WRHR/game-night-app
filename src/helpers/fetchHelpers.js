@@ -1,9 +1,9 @@
 const baseUrl = 'http://localhost:5000'
-const usersUrl = `${baseUrl}/users/`
-const loginUrl = `${usersUrl}/login`
-const registerUrl = `${usersUrl}/register`
-const eventsUrl = `${baseUrl}/events`
-const gamesUrl = `${baseUrl}/games`
+export const usersUrl = `${baseUrl}/users`
+export const loginUrl = `${usersUrl}/login`
+export const registerUrl = `${usersUrl}/register`
+export const eventsUrl = `${baseUrl}/events`
+export const gamesUrl = `${baseUrl}/games`
 
 const fecthLogin = (body) => {
     fetch(loginUrl, {
@@ -16,13 +16,14 @@ const fecthLogin = (body) => {
 }
 
 const fetchRegister = (body) => {
-    fetch(registerUrl, {
+    return fetch(registerUrl, {
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify(body)
     })
     .then(res => res.json())
     .then(result => {return result})
+    
 }
 
 const fecthGetEvents = () => {
