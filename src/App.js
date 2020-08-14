@@ -8,7 +8,7 @@ import Home from './components/Home'
 import Events from './components/Events'
 import Games from './components/Games'
 import Login from './components/Login';
-import {profileUrl} from './helpers/fetchHelpers'
+import {profileUrl, eventsUrl} from './helpers/fetchHelpers'
 
 // const testUser = {
 //   name:{
@@ -137,21 +137,28 @@ function App() {
     .then(result => setUser(result.user))
   }
 
-  // const getUserEvents = () => {
-  //   let userEvents = user.events.map(event => {
-  //     //fetch events that have the same ids as each event
-  //     return eventList.filter(el => el.id === event)[0]
-  //   })
-  //   setMyEvents(userEvents)
-  // }
+  const getUserEvents = (events) => {
+    let userEvents = events.map(event => {
+    
+    let eventList = fetch(eventsUrl).then(res => res.json())
+
+      return eventList.select(el => el.id === event)
+    })
+    setMyEvents(userEvents)
+  }
 
   useEffect(()=> {
-    if(localStorage.token){
+    if(localStorage.token){ 
       authorizeUser()
     }
-    // getUserEvents()
   },[])
   
+  useEffect(()=>{
+    if(user.events){
+      getUserEvents(user.events)
+    }
+  },[])
+
   return (
     <div className="App">
       { user.name? <Header/> : null }

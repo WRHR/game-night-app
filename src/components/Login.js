@@ -6,6 +6,7 @@ export default function Login({setUser}){
 
     useEffect( ()=> {
         localStorage.removeItem('token')
+        setUser({})
     },[])
     return(
         <div>
