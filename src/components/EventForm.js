@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {EventFormContainer, Form, FormTitleContainer, FormTitle, CloseButton} from '../Styled/FormStyles'
 import EventGameSelect from './EventGameSelect'
+import {eventsUrl} from '../helpers/fetchHelpers'
 
 
 export default function EventForm({selectedDay, setShowEventForm, myEvents, setMyEvents}){
@@ -10,6 +11,7 @@ export default function EventForm({selectedDay, setShowEventForm, myEvents, setM
     const [description, setDescription] = useState('')
     const [selectGameToggle, setSelectGameToggle] = useState(false)
     const [game, setGame] = useState(null)
+    const [attendees, setAttendees] = useState([])
 
     const handleSubmit =(e) => {
         e.preventDefault()
@@ -18,9 +20,21 @@ export default function EventForm({selectedDay, setShowEventForm, myEvents, setM
             title,
             start: `${eventDate}T${startTime}`,
             description,
-            game
+            game,
+            attendees
         }
         setMyEvents([...myEvents, event])
+
+    fetch(eventsUrl, {
+        method:'POST',
+        headers:{
+            'Authorization': `Bearer ${localStorage.token}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(event)
+    })
+    .then(res => res.json())
+
         setShowEventForm(false)
     }
 
