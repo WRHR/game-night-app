@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {loginUrl} from '../helpers/fetchHelpers'
 
-export default function LoginForm({setUser, setFormToggle}){
+export default function LoginForm({setUser, setFormToggle, ...routerProps}){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])
@@ -22,6 +22,7 @@ export default function LoginForm({setUser, setFormToggle}){
             }else{
                 localStorage.setItem('token', results.token)
                 setUser(results.user)
+                routerProps.history.push('/')
             }
         })
 

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { registerUrl } from '../helpers/fetchHelpers'
 
-export default function RegistrationFrom({setUser, setFormToggle}){
+export default function RegistrationFrom({setUser, setFormToggle, ...routerProps}){
     const [first, setFirst] = useState('')
     const [last, setLast] = useState('')
     const [email, setEmail] = useState('')
@@ -23,6 +23,7 @@ export default function RegistrationFrom({setUser, setFormToggle}){
             }else{
                 localStorage.setItem('token', results.token)
                 setUser(results.user)
+                routerProps.history.push('/')
             }
         })
     }
