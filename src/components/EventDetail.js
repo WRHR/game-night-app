@@ -25,7 +25,7 @@ export default function EventDetail(
             <Date onClick={selectDay}>{day}</Date>
             <Title>{selectedEvent.title}</Title>
             <GameImage onClick={(e)=>{setShowGameDetail(selectedEvent.game)}} src={selectedEvent.game.background_url}>
-                <GameTitleOverlay>{selectedEvent.game.title}</GameTitleOverlay>
+                <GameTitleOverlay>{selectedEvent.game.name}</GameTitleOverlay>
             </GameImage>
             <InfoBox>
                 <h2>Starts at:</h2>
