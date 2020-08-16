@@ -12,7 +12,6 @@ export default function GameDetail({game, setShowGameDetail}){
 
     useEffect( getGameDetails,[])
 
-    console.log(gameDetails)
     return(
         <GameDetailContainer>
             <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
@@ -22,11 +21,11 @@ export default function GameDetail({game, setShowGameDetail}){
             <GameDetailImage src={gameDetails.background_image}>
                 
             </GameDetailImage>
+             
             <p>Description:</p>
             <GameDescription>{gameDetails.description_raw}</GameDescription>
             {/* 
-            title and rating
-            
+            rating    
             website */}
             
 

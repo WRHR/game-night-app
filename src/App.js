@@ -62,6 +62,7 @@ function App() {
             component={Events}
             events={user.events}
             myEvents={myEvents}
+            setMyEvents={setMyEvents}
             showGameDetail={showGameDetail}
             setShowGameDetail={setShowGameDetail}
           />
