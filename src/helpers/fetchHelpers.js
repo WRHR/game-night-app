@@ -1,5 +1,5 @@
 const baseUrl = 'http://localhost:5000'
-const usersUrl = `${baseUrl}/users`
+export const usersUrl = `${baseUrl}/users`
 export const loginUrl = `${usersUrl}/login`
 export const registerUrl = `${usersUrl}/register`
 export const profileUrl = `${usersUrl}/profile`

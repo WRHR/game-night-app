@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {EventFormContainer, Form, FormTitleContainer, FormTitle, CloseButton, FormButton} from '../Styled/FormStyles'
 import EventGameSelect from './EventGameSelect'
 import {eventsUrl} from '../helpers/fetchHelpers'
+import EventAttendeeSelect from './EventAttendeeSelect'
 
 
 export default function EventForm(
@@ -11,7 +12,8 @@ export default function EventForm(
         myEvents, 
         setMyEvents,
         showGameDetail,
-        setShowGameDetail
+        setShowGameDetail,
+        userId
     }){
 
     const [title, setTitle] = useState('')
@@ -20,6 +22,7 @@ export default function EventForm(
     const [description, setDescription] = useState('')
     const [selectGameToggle, setSelectGameToggle] = useState(false)
     const [game, setGame] = useState(null)
+    const [attendeesToggle, setAttendeesToggle] = useState(false)
     const [attendees, setAttendees] = useState([])
 
     const handleSubmit =(e) => {
@@ -56,6 +59,11 @@ export default function EventForm(
         e.preventDefault()
         setSelectGameToggle(!selectGameToggle)
     }
+    const handelInvite = (e) => {
+        e.stopPropagation()
+        e.preventDefault()
+        setAttendeesToggle(!attendeesToggle)
+    }
 
 
     return(
@@ -68,6 +76,7 @@ export default function EventForm(
                 <Form onSubmit={handleSubmit}>
                     {game ? <h2>Game: {game.name}</h2> :null}
                     <FormButton onClick={handelSelectGame}>Select a Game</FormButton>
+                    <FormButton onClick={handelInvite}>Invite Friends</FormButton>
                     <label>Title:</label>
                     <input type='text' name='title' value={title} onChange={(e)=>setTitle(e.target.value)}/> 
                     <label>Day:</label>
@@ -92,6 +101,14 @@ export default function EventForm(
                         setShowGameDetail={setShowGameDetail} 
                     /> 
                     : null}
+                {attendeesToggle 
+                    ? <EventAttendeeSelect 
+                        userId={userId}
+                        game={game}
+                        attendees={attendees}
+                        setAttendees={setAttendees}
+                    />  
+                    :null}
             </div>
         </EventFormContainer>
     )
