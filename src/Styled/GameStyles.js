@@ -38,7 +38,7 @@ export const GameDetailContainer = styled.div`
     transform: translate(-50%,-50%);
     background-color: ${colors.black};
     color:${colors.white};
-    width:600px;
+    width:700px;
 `
 
 export const GameDetailImage = styled.div`

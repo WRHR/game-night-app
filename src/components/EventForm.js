@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {EventFormContainer, Form, FormTitleContainer, FormTitle, CloseButton} from '../Styled/FormStyles'
+import {EventFormContainer, Form, FormTitleContainer, FormTitle, CloseButton, FormButton} from '../Styled/FormStyles'
 import EventGameSelect from './EventGameSelect'
 import {eventsUrl} from '../helpers/fetchHelpers'
 
@@ -9,9 +9,11 @@ export default function EventForm(
         selectedDay, 
         setShowEventForm, 
         myEvents, 
-        setMyEvents
+        setMyEvents,
+        showGameDetail,
+        setShowGameDetail
     }){
-        
+
     const [title, setTitle] = useState('')
     const [eventDate, setEventDate] = useState(selectedDay)
     const [startTime, setStartTime] = useState('')
@@ -64,8 +66,8 @@ export default function EventForm(
             </FormTitleContainer>
             <div style={{display:'flex'}}>
                 <Form onSubmit={handleSubmit}>
-                    {game ? <h2>Game: {game.title}</h2> :null}
-                    <button onClick={handelSelectGame}>Select a Game</button>
+                    {game ? <h2>Game: {game.name}</h2> :null}
+                    <FormButton onClick={handelSelectGame}>Select a Game</FormButton>
                     <label>Title:</label>
                     <input type='text' name='title' value={title} onChange={(e)=>setTitle(e.target.value)}/> 
                     <label>Day:</label>
@@ -85,7 +87,9 @@ export default function EventForm(
                 {selectGameToggle 
                     ? <EventGameSelect 
                         setGame={setGame} 
-                        setSelectGameToggle={setSelectGameToggle} 
+                        setSelectGameToggle={setSelectGameToggle}
+                        showGameDetail={showGameDetail}
+                        setShowGameDetail={setShowGameDetail} 
                     /> 
                     : null}
             </div>

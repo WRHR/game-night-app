@@ -53,6 +53,8 @@ export default function Events(
                         setShowEventForm={setShowEventForm} 
                         myEvents={myEvents}
                         setMyEvents={setMyEvents}
+                        showGameDetail={showGameDetail}
+                        setShowGameDetail={setShowGameDetail}
                     /> 
                     : null
                 }

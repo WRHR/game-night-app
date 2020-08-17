@@ -35,3 +35,28 @@ export const CloseButton = styled.button`
     margin:0;
     border-radius: 0;
 `
+
+export const FormButton = styled.button`
+    width: max-content;
+    border-radius: 1rem;
+    margin: 10px 0;
+    padding: 7px;
+    background-color: hsl(211, 87%, 25%);
+    color: hsl(35, 0%, 100%);
+    font-size: small;
+    cursor: pointer;
+`
+export const FormLi = styled.li`
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    color: ${colors.white};
+    transition: all 0.2s;
+
+    &:hover{
+        background-color: ${colors.white};
+        color: ${colors.black};
+    }
+
+`
