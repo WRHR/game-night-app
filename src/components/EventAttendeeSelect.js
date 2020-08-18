@@ -34,7 +34,7 @@ export default function EventAttendeeSelect({userId, game, attendees, setAttende
     }
 
     return (
-        <div>
+        <div style={{width:'150px', color:'white'}}>
             <h1>Friend List:</h1>
             <ul>
                 {createUserList()}

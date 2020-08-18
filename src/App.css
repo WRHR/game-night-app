@@ -86,7 +86,7 @@ button{
     width: max-content;
     border-radius: 1rem;
     margin: 10px 0;
-    padding: 5px;
+    padding: 10px;
     background-color: hsl(211, 87%, 25%);
     color: hsl(35, 0%, 100%);
     font-size: medium;
