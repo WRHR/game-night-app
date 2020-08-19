@@ -33,7 +33,6 @@ export const EventFormContainer = styled.div`
     width:auto;
     animation: ${popIn};
     animation-duration: 0.3s;
-    max-width: 1000px;
     transition: all 0.3s;
     ` 
 export const Form = styled.form`
