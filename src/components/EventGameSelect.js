@@ -39,7 +39,7 @@ export default function EventGameSelect(
                     ? <FormTitle>Your Game Collection</FormTitle> 
                     : <FormTitle>Search Results</FormTitle>
                 }
-                <ul style={{height:'345px', width:'300px', overflowY:'auto', paddingLeft:'10px'}}>
+                <ul style={{height:'345px', width:'250px', overflowY:'auto', padding:'0 20px'}}>
                     {showSearchResults()}
                 </ul>
             </div>

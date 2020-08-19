@@ -66,12 +66,13 @@ export const FormButton = styled.button`
     padding: 7px;
     background-color: hsl(211, 87%, 25%);
     color: hsl(35, 0%, 100%);
-    font-size: small;
+    font-size: 0.9rem;
     cursor: pointer;
 `
 export const FormLi = styled.li`
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin: 5px;
     padding: 5px;
     color: ${colors.white};

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {FormButton, FormLi} from '../Styled/FormStyles'
 import {gamesUrl} from '../helpers/fetchHelpers'
-import {CheckRounded} from '@material-ui/icons'
+import {CheckRounded, InfoRounded} from '@material-ui/icons'
 
 export default function EventGameSelectItem(
     {
@@ -53,8 +53,11 @@ export default function EventGameSelectItem(
 
     return(
         <FormLi onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseEnter}>
-            <p style={{cursor:'pointer'}} onClick={(e)=>{setShowGameDetail(game)}}>{game.name}</p>
-            <div>
+            <p style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+                {game.name}
+                {hovered && <InfoRounded style={{cursor:'pointer'}} onClick={(e)=>{setShowGameDetail(game)}}/>}
+            </p>
+            <div style={{display:'flex', justifyContent:'center'}}>
                 {hovered && !checkLibrary(game) 
                     ?
                     <FormButton 
