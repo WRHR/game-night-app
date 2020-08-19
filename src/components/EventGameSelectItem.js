@@ -23,7 +23,7 @@ export default function EventGameSelectItem(
     const handleAddGameToEvent= (e) => {
         e.stopPropagation()
         setGame(gameInfo)
-        setSelectGameToggle(false)
+        // setSelectGameToggle(false)
     }
     
     const handleAddGameToLibrary= (e) => {

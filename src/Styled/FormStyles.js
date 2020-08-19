@@ -88,7 +88,7 @@ export const FormLi = styled.li`
 export const GameSelectContainer = styled.div`
     display:flex;
     flex-direction:column;
-    align-items:center;
+    /* align-items:center; */
 
     animation: ${slideOut};
     animation-duration: 0.2s;

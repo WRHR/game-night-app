@@ -20,7 +20,7 @@ export default function GamesSearchBar({setSearchResults}){
     }
 
     return(
-        <div>
+        <div style={{paddingLeft:'10px'}}>
             <form onSubmit={handleSearch}>
                 <input 
                     placeholder='Search for games' 
