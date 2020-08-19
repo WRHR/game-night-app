@@ -51,6 +51,7 @@ export const FormTitle = styled.h1`
     color: ${colors.white};
     padding-top: 10px;
     padding-left: 10px;
+    font-size: 1.5rem;
 `
 
 export const CloseButton = styled.button`
