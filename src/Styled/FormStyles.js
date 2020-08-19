@@ -11,13 +11,13 @@ const slideOut = keyframes`
     0% {
         transform:translateX(-50%);
         opacity:0;
-        max-width:0%;
+        
         
     }
     100% {
         transform:translateX(0%);
         opacity: 1;
-        max-width:100%;
+    
     }
 `
 
@@ -36,7 +36,7 @@ export const EventFormContainer = styled.div`
     transition: all 0.3s;
     ` 
 export const Form = styled.form`
-    padding: 20px;
+    padding: 10px 20px;
     display:flex;
     flex-direction: column;
     justify-content:space-between;
