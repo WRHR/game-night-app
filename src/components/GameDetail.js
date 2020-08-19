@@ -24,6 +24,8 @@ export default function GameDetail({game, setShowGameDetail}){
              
             
             <GameDescription>
+                Rating: {gameDetails.rating}/5 <br></br>
+                <br></br>
                 Description: <br></br>
                 {gameDetails.description_raw}
             </GameDescription>

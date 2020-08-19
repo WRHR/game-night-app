@@ -42,7 +42,6 @@ export default function EventGameSelectItem(
         
     }
 
-
     const handleMouseEnter =() => {
         setHovered(!hovered)
     }

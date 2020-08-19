@@ -29,7 +29,7 @@ export const GameImage = styled.div`
 export const GameTitleOverlay = styled.h1`
     color: ${colors.white};
     -webkit-text-stroke: 1px ${colors.black};
-    font-size: 30px;
+    font-size: 2rem;
 `
 
 export const GamesContainer = styled.div`
@@ -52,6 +52,7 @@ export const GameDetailContainer = styled.div`
     width:700px;
     animation: ${popIn};
     animation-duration: 0.3s;
+    padding-bottom: 10px;
 `
 
 export const GameDetailImage = styled.div`
