@@ -22,7 +22,7 @@ export default function LoginForm({setUser, setFormToggle, ...routerProps}){
             }else{
                 localStorage.setItem('token', results.token)
                 setUser(results.user)
-                routerProps.history.push('/')
+                routerProps.history.push('/events')
             }
         })
 
