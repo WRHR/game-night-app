@@ -65,7 +65,6 @@ export default function EventForm(
         setAttendeesToggle(!attendeesToggle)
     }
 
-
     return(
         <EventFormContainer>
             <FormTitleContainer>

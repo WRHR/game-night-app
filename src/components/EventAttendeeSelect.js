@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {usersUrl} from '../helpers/fetchHelpers'
-import {SportsEsportsRounded} from '@material-ui/icons'
+import {SportsEsportsRounded, CheckRounded} from '@material-ui/icons'
+import {FormLi} from '../Styled/FormStyles'
 
 export default function EventAttendeeSelect({userId, game, attendees, setAttendees}){
     const [userList, setUserList] = useState([])
@@ -13,8 +14,11 @@ export default function EventAttendeeSelect({userId, game, attendees, setAttende
     
     const addGuest = (e, user) =>{
         e.stopPropagation()
-        setAttendees([...attendees, user._id])
-        
+        if(attendees.includes(user._id)){
+            setAttendees(attendees.filter(attendee => attendee !== user._id))
+        } else{
+            setAttendees([...attendees, user._id])
+        } 
     }
 
     useEffect(getUserList, [])
@@ -27,14 +31,35 @@ export default function EventAttendeeSelect({userId, game, attendees, setAttende
             })
             return (
                 userGameLibrary.includes(game.id)
-                    ? <li onClick={(e)=> addGuest(e, user)} key={user._id}>{user.name} <SportsEsportsRounded style={{fontSize:'1rem'}}/></li>
-                    : <li onClick={(e)=> addGuest(e, user)} key={user._id}>{user.name}</li>
+                    ? 
+                        <FormLi 
+                            onClick={(e)=> addGuest(e, user)} 
+                            key={user._id}
+                        >
+                            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+                                <div>
+                                    {attendees.includes(user._id)? <CheckRounded style={{fontSize:'1rem'}}/> : null}
+                                    {user.name} 
+                                </div>
+                                <SportsEsportsRounded style={{fontSize:'1rem'}}/>
+                            </div> 
+                        </FormLi>
+                    : 
+                        <FormLi 
+                            onClick={(e)=> addGuest(e, user)} 
+                            key={user._id}
+                        >
+                            <div>
+                                {attendees.includes(user._id)? <CheckRounded style={{fontSize:'1rem'}}/> : null}
+                                {user.name}
+                            </div>
+                        </FormLi>
             )
         })
     }
 
     return (
-        <div style={{width:'150px', color:'white'}}>
+        <div style={{width:'180px', color:'white', paddingRight:'10px'}}>
             <h1>Friend List:</h1>
             <ul>
                 {createUserList()}
