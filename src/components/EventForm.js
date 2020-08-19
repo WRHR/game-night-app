@@ -82,7 +82,7 @@ export default function EventForm(
                 <FormTitle>New Game Night</FormTitle> 
                 <CloseButton onClick={(e)=> setShowEventForm(false)}>X</CloseButton>
             </FormTitleContainer>
-            <div style={{display:'flex'}}>
+            <div style={{display:'flex',}}>
                 <Form onSubmit={handleSubmit}>
                     {game ? <h2>Game: {game.name}</h2> :null}
                     <FormButton onClick={handelSelectGame}>Select a Game</FormButton>
@@ -111,7 +111,8 @@ export default function EventForm(
                         setShowGameDetail={setShowGameDetail} 
                         gameLibrary={gameLibrary}
                     /> 
-                    : null}
+                    : null
+                }
                 {attendeesToggle 
                     ? <EventAttendeeSelect 
                         userId={userId}
@@ -119,7 +120,8 @@ export default function EventForm(
                         attendees={attendees}
                         setAttendees={setAttendees}
                     />  
-                    :null}
+                    :null
+                }
             </div>
         </EventFormContainer>
     )

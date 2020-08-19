@@ -32,7 +32,7 @@ export default function EventGameSelect(
     }
 
     return(
-        <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+        <div style={{display:'flex', flexDirection:'column', alignItems:'center',}}>
             <GameSearchBar setSearchResults={setSearchGames}/>
             <div>
                 {searchGames.length === 0 ? <FormTitle>Your Game Collection</FormTitle> : <FormTitle>Search Results</FormTitle>}

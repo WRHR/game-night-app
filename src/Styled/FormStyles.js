@@ -1,5 +1,11 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import {colors} from './Colors'
+
+
+const popIn = keyframes`
+    0% { top: 100%}
+    100% { top: 50%}
+`
 
 export const EventFormContainer = styled.div`
     position: absolute;
@@ -10,6 +16,9 @@ export const EventFormContainer = styled.div`
     display: flex;
     flex-direction:column;
     background-color:${colors.black};
+    width:auto;
+    animation: ${popIn};
+    animation-duration: 0.3s;
     ` 
 export const Form = styled.form`
     padding: 20px;
@@ -38,7 +47,7 @@ export const CloseButton = styled.button`
 export const FormButton = styled.button`
     width: max-content;
     border-radius: 1rem;
-    margin: 10px 0;
+    margin: 5px 0;
     padding: 7px;
     background-color: hsl(211, 87%, 25%);
     color: hsl(35, 0%, 100%);
