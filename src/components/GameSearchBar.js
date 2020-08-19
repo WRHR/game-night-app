@@ -23,6 +23,7 @@ export default function GamesSearchBar({setSearchResults}){
         <div style={{paddingLeft:'10px'}}>
             <form onSubmit={handleSearch}>
                 <input 
+                    style={{width:'200px'}}
                     placeholder='Search for games' 
                     value={searchInput} 
                     onChange={handleChange}
