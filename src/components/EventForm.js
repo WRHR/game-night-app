@@ -66,6 +66,10 @@ export default function EventForm(
         setAttendeesToggle(!attendeesToggle)
     }
 
+    const checkGame = (game) => {
+        return game ? false : true
+    }
+
     return(
         <EventFormContainer>
             <FormTitleContainer>
@@ -76,7 +80,7 @@ export default function EventForm(
                 <Form onSubmit={handleSubmit}>
                     {game ? <h2>Game: {game.name}</h2> :null}
                     <FormButton onClick={handelSelectGame}>Select a Game</FormButton>
-                    <FormButton onClick={handelInvite}>Invite Friends</FormButton>
+                    <FormButton disabled={checkGame(game)} onClick={handelInvite}>Invite Friends</FormButton>
                     <label>Title:</label>
                     <input type='text' name='title' value={title} onChange={(e)=>setTitle(e.target.value)}/> 
                     <label>Day:</label>
