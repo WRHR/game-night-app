@@ -5,7 +5,7 @@ export default function Header(props){
 
     return(
         <HeaderContainer>
-            <h1>Game Night</h1>
+            <h1 style={{fontSize:'1.25rem'}} >Game Night</h1>
             <Logout to='/login'>Logout</Logout>
         </HeaderContainer>
     )
