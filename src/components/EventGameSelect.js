@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import GameSearchBar from './GameSearchBar'
 import EventGameSelectItem from './EventGameSelectItem'
+import {FormTitle} from '../Styled/FormStyles'
 
 export default function EventGameSelect(
     {
@@ -10,10 +11,12 @@ export default function EventGameSelect(
         setShowGameDetail,
         gameLibrary
     }){
-    const [searchGames, setSearchGames] = useState(gameLibrary)
+    const [searchGames, setSearchGames] = useState([])
 
     const showSearchResults = () => {
-        return searchGames.map(game => {
+        let gameList = searchGames.length === 0 ? gameLibrary : searchGames 
+
+        return gameList.map(game => {
             return (
                 <EventGameSelectItem 
                     key={game.id} 
@@ -31,9 +34,12 @@ export default function EventGameSelect(
     return(
         <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
             <GameSearchBar setSearchResults={setSearchGames}/>
-            <ul style={{height:'345px', width:'300px', overflowY:'auto'}}>
-                {showSearchResults()}
-            </ul>
+            <div>
+                {searchGames.length === 0 ? <FormTitle>Your Game Collection</FormTitle> : <FormTitle>Search Results</FormTitle>}
+                <ul style={{height:'345px', width:'300px', overflowY:'auto'}}>
+                    {showSearchResults()}
+                </ul>
+            </div>
         </div>
     )
 }

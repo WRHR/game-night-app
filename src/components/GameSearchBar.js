@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
+import {FormButton} from '../Styled/FormStyles'
 
 export default function GamesSearchBar({setSearchResults}){
     const [searchInput, setSearchInput] = useState('')
@@ -26,7 +27,7 @@ export default function GamesSearchBar({setSearchResults}){
                     value={searchInput} 
                     onChange={handleChange}
                 />
-                <button type='submit'><SearchRoundedIcon style={{fontSize: 'medium'}}/></button>
+                <FormButton type='submit'><SearchRoundedIcon style={{fontSize: '10px'}}/></FormButton>
             </form>
         </div>
     )
