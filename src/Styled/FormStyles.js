@@ -17,7 +17,6 @@ export const Form = styled.form`
     flex-direction: column;
     justify-content:space-between;
     color: ${colors.white};
-    height: 345px;
 `
 export const FormTitleContainer = styled.div`
     display:flex;

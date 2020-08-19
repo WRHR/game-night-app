@@ -29,7 +29,6 @@ export default function EventForm(
     const handleSubmit =(e) => {
         e.preventDefault()
         let event = {
-            id: 25,
             title,
             start: `${eventDate}T${startTime}`,
             description,
@@ -38,15 +37,15 @@ export default function EventForm(
         }
         setMyEvents([...myEvents, event])
 
-    fetch(eventsUrl, {
-        method:'POST',
-        headers:{
-            'Authorization': `Bearer ${localStorage.token}`,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(event)
-    })
-    .then(res => res.json())
+        fetch(eventsUrl, {
+            method:'POST',
+            headers:{
+                'Authorization': `Bearer ${localStorage.token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(event)
+        })
+        .then(res => res.json())
 
         setShowEventForm(false)
     }
@@ -68,6 +67,13 @@ export default function EventForm(
 
     const checkGame = (game) => {
         return game ? false : true
+    }
+
+    const checkForm = () => {
+        if(title && startTime && description && game) {
+            return false
+        }
+        return true
     }
 
     return(
@@ -95,7 +101,7 @@ export default function EventForm(
                         rows="7" 
                         cols="40"
                     />
-                    <button type='submit' onClick={handleClick}>Add Game Night</button>
+                    <button disabled={checkForm()} type='submit' onClick={handleClick}>Add Game Night</button>
                 </Form>
                 {selectGameToggle 
                     ? <EventGameSelect 
