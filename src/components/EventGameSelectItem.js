@@ -54,14 +54,14 @@ export default function EventGameSelectItem(
 
     return(
         <FormLi onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseEnter}>
-            <p onClick={(e)=>{setShowGameDetail(game)}}>{game.name}</p>
+            <p style={{cursor:'pointer'}} onClick={(e)=>{setShowGameDetail(game)}}>{game.name}</p>
             <div>
                 {hovered && !checkLibrary(game) 
                     ?
                     <FormButton 
                         onClick={handleAddGameToLibrary} 
                         disabled={inLibrary}
-                        style={inLibrary? {backgroundColor:'green'}:null}
+                        style={inLibrary? {transition:'all 0.2s',backgroundColor:'green'}:null}
                         >
                             {inLibrary ? 'Added to Games' : 'Add to Games'}
                     </FormButton> 
