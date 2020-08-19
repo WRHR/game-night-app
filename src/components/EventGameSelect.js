@@ -35,7 +35,10 @@ export default function EventGameSelect(
         <GameSelectContainer>
             <GameSearchBar setSearchResults={setSearchGames}/>
             <div>
-                {searchGames.length === 0 ? <FormTitle>Your Game Collection</FormTitle> : <FormTitle>Search Results</FormTitle>}
+                {searchGames.length === 0 
+                    ? <FormTitle>Your Game Collection</FormTitle> 
+                    : <FormTitle>Search Results</FormTitle>
+                }
                 <ul style={{height:'345px', width:'300px', overflowY:'auto'}}>
                     {showSearchResults()}
                 </ul>

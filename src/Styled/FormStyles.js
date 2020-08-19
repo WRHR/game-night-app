@@ -9,13 +9,15 @@ const popIn = keyframes`
 
 const slideOut = keyframes`
     0% {
-        width: 0%;
+        transform:translateX(-50%);
         opacity:0;
+        max-width:0%;
         
     }
     100% {
-        width: 100%;
+        transform:translateX(0%);
         opacity: 1;
+        max-width:100%;
     }
 `
 
@@ -31,6 +33,8 @@ export const EventFormContainer = styled.div`
     width:auto;
     animation: ${popIn};
     animation-duration: 0.3s;
+    max-width: 1000px;
+    transition: all 0.3s;
     ` 
 export const Form = styled.form`
     padding: 20px;
@@ -86,13 +90,13 @@ export const GameSelectContainer = styled.div`
     align-items:center;
 
     animation: ${slideOut};
-    animation-duration: 0.5s;
+    animation-duration: 0.2s;
 `
 export const AttendeeSelectContainer = styled.div`
     width:180px;
-     color: ${colors.white}; 
-     padding-right:10px;
+    color: ${colors.white}; 
+    padding-right:10px;
 
     animation: ${slideOut};
-    animation-duration: 0.5s;
+    animation-duration: 0.2s;
 `
