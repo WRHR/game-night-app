@@ -83,7 +83,7 @@ function App() {
               }
             } 
           />
-          <Redirect to='/' />
+          <Redirect to='/events' />
         </Switch>
       </div>
     </div>

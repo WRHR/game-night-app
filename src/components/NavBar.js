@@ -18,10 +18,10 @@ const NavBar = (props) => {
     return(
         <Nav onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseEnter}>
             <NavItems>
-                <NavItem to='/'>
+                {/* <NavItem to='/'>
                     <HomeRounded style={style.iconstyle}/>
                     {hovered ? <NavDetail >Home</NavDetail> :null}
-                </NavItem>
+                </NavItem> */}
                 <NavItem to='/events'>
                     <CalendarTodayRounded style={style.iconstyle}/>
                     {hovered ? <NavDetail >Events</NavDetail> :null}
