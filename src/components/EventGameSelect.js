@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import GameSearchBar from './GameSearchBar'
 import EventGameSelectItem from './EventGameSelectItem'
-import {FormTitle} from '../Styled/FormStyles'
+import {FormTitle, GameSelectContainer} from '../Styled/FormStyles'
 
 export default function EventGameSelect(
     {
@@ -32,7 +32,7 @@ export default function EventGameSelect(
     }
 
     return(
-        <div style={{display:'flex', flexDirection:'column', alignItems:'center',}}>
+        <GameSelectContainer>
             <GameSearchBar setSearchResults={setSearchGames}/>
             <div>
                 {searchGames.length === 0 ? <FormTitle>Your Game Collection</FormTitle> : <FormTitle>Search Results</FormTitle>}
@@ -40,6 +40,6 @@ export default function EventGameSelect(
                     {showSearchResults()}
                 </ul>
             </div>
-        </div>
+        </GameSelectContainer>
     )
 }

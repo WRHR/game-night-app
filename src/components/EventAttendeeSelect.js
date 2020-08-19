@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {usersUrl} from '../helpers/fetchHelpers'
 import {SportsEsportsRounded, CheckRounded} from '@material-ui/icons'
-import {FormLi} from '../Styled/FormStyles'
+import {FormLi, AttendeeSelectContainer} from '../Styled/FormStyles'
 
 export default function EventAttendeeSelect({userId, game, attendees, setAttendees}){
     const [userList, setUserList] = useState([])
@@ -59,11 +59,11 @@ export default function EventAttendeeSelect({userId, game, attendees, setAttende
     }
 
     return (
-        <div style={{width:'180px', color:'white', paddingRight:'10px'}}>
+        <AttendeeSelectContainer>
             <h1>Friend List:</h1>
             <ul>
                 {createUserList()}
             </ul>
-        </div>
+        </AttendeeSelectContainer>
     )
 }

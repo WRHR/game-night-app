@@ -7,6 +7,18 @@ const popIn = keyframes`
     100% { top: 50%}
 `
 
+const slideOut = keyframes`
+    0% {
+        width: 0%;
+        opacity:0;
+        
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+`
+
 export const EventFormContainer = styled.div`
     position: absolute;
     top: 50%;
@@ -66,5 +78,21 @@ export const FormLi = styled.li`
         background-color: ${colors.white};
         color: ${colors.black};
     }
+`
 
+export const GameSelectContainer = styled.div`
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    animation: ${slideOut};
+    animation-duration: 0.5s;
+`
+export const AttendeeSelectContainer = styled.div`
+    width:180px;
+     color: ${colors.white}; 
+     padding-right:10px;
+
+    animation: ${slideOut};
+    animation-duration: 0.5s;
 `

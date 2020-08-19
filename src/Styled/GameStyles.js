@@ -1,6 +1,10 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import {colors} from './Colors'
 
+const popIn = keyframes`
+    0% { top: 100%}
+    100% { top: 50%}
+`
 
 export const GameImage = styled.div`
     height:250px;
@@ -39,6 +43,8 @@ export const GameDetailContainer = styled.div`
     background-color: ${colors.black};
     color:${colors.white};
     width:700px;
+    animation: ${popIn};
+    animation-duration: 0.3s;
 `
 
 export const GameDetailImage = styled.div`
