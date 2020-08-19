@@ -95,5 +95,6 @@ button{
 
 input, textarea {
     font-family: 'Roboto', sans-serif;
+    height: 20px;
 }
 

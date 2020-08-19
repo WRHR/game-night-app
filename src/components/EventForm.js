@@ -13,7 +13,8 @@ export default function EventForm(
         setMyEvents,
         showGameDetail,
         setShowGameDetail,
-        userId
+        userId,
+        gameLibrary
     }){
 
     const [title, setTitle] = useState('')
@@ -98,6 +99,7 @@ export default function EventForm(
                         setSelectGameToggle={setSelectGameToggle}
                         showGameDetail={showGameDetail}
                         setShowGameDetail={setShowGameDetail} 
+                        gameLibrary={gameLibrary}
                     /> 
                     : null}
                 {attendeesToggle 

@@ -60,6 +60,7 @@ function App() {
             exact 
             path='/events'
             component={Events}
+            gameLibrary={user.gameLibrary}
             userId={user._id}
             events={user.events}
             myEvents={myEvents}

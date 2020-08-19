@@ -12,7 +12,8 @@ export default function Events(
         setMyEvents, 
         showGameDetail, 
         setShowGameDetail,
-        userId
+        userId,
+        gameLibrary
     }){
     
     const [selectedEvent, setSelectedEvent] = useState(null)
@@ -57,6 +58,7 @@ export default function Events(
                         showGameDetail={showGameDetail}
                         setShowGameDetail={setShowGameDetail}
                         userId={userId}
+                        gameLibrary={gameLibrary}
                     /> 
                     : null
                 }

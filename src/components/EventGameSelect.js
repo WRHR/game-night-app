@@ -7,20 +7,22 @@ export default function EventGameSelect(
         setGame, 
         setSelectGameToggle,
         showGameDetail,
-        setShowGameDetail
+        setShowGameDetail,
+        gameLibrary
     }){
-    const [searchGames, setSearchGames] = useState([])
+    const [searchGames, setSearchGames] = useState(gameLibrary)
 
     const showSearchResults = () => {
-        return searchGames.map(result => {
+        return searchGames.map(game => {
             return (
                 <EventGameSelectItem 
-                    key={result.id} 
+                    key={game.id} 
                     setGame={setGame}
                     setSelectGameToggle={setSelectGameToggle}
-                    game={result}
+                    game={game}
                     showGameDetail={showGameDetail}
                     setShowGameDetail={setShowGameDetail}
+                    gameLibrary={gameLibrary}
                 />     
             )
         })

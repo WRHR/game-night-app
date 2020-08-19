@@ -1,16 +1,18 @@
 import React, {useState} from 'react'
 import {FormButton, FormLi} from '../Styled/FormStyles'
 import {gamesUrl} from '../helpers/fetchHelpers'
+import {CheckRounded} from '@material-ui/icons'
 
 export default function EventGameSelectItem(
     {
         game, 
         setGame, 
         setSelectGameToggle,
-        showGameDetail,
-        setShowGameDetail
+        setShowGameDetail,
+        gameLibrary
     }){
     const [hovered, setHovered] = useState(false)
+    const [inLibrary,setInLibrary] = useState(false)
 
     let gameInfo = {
         id:game.id,
@@ -36,7 +38,8 @@ export default function EventGameSelectItem(
             body: JSON.stringify(gameInfo)
         })
         .then(res=> res.json())
-        .then(console.log)
+        .then(setInLibrary(true))
+        
     }
 
 
@@ -44,11 +47,25 @@ export default function EventGameSelectItem(
         setHovered(!hovered)
     }
 
+    const checkLibrary =(game) => {
+        let gameIds = gameLibrary.map(game => game.id)
+        return gameIds.includes(game.id)
+    }
+
     return(
         <FormLi onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseEnter}>
             <p onClick={(e)=>{setShowGameDetail(game)}}>{game.name}</p>
             <div>
-                {hovered ? <FormButton onClick={handleAddGameToLibrary}>Add to Games</FormButton> :null}
+                {hovered && !checkLibrary(game) 
+                    ?
+                    <FormButton 
+                        onClick={handleAddGameToLibrary} 
+                        disabled={inLibrary}
+                        style={inLibrary? {backgroundColor:'green'}:null}
+                        >
+                            {inLibrary ? 'Added to Games' : 'Add to Games'}
+                    </FormButton> 
+                    :null}
                 {hovered ? <FormButton onClick={handleAddGameToEvent}>Add to Event</FormButton> :null}
             </div>
         </FormLi>
