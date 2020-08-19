@@ -84,9 +84,9 @@ export default function EventForm(
             </FormTitleContainer>
             <div style={{display:'flex',}}>
                 <Form onSubmit={handleSubmit}>
-                    <div style={{display:'flex', alignItems:'center'}}>
+                    <div style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
                         <FormButton onClick={handelSelectGame}>Select a Game</FormButton> 
-                        {game ? <h2 style={{margin:'5px 0'}}>{game.name}</h2> :null}
+                        {game ? <h2 style={{margin:'5px 0'}}> {game.name}</h2> :null}
                     </div>
                     <FormButton disabled={checkGame(game)} onClick={handelInvite}>Invite Friends</FormButton>
                     <label>Title:</label>

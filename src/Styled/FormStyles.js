@@ -11,13 +11,10 @@ const slideOut = keyframes`
     0% {
         transform:translateX(-50%);
         opacity:0;
-        
-        
     }
     100% {
         transform:translateX(0%);
         opacity: 1;
-    
     }
 `
 
@@ -30,7 +27,7 @@ export const EventFormContainer = styled.div`
     display: flex;
     flex-direction:column;
     background-color:${colors.black};
-    width:auto;
+    width:max-content;
     animation: ${popIn};
     animation-duration: 0.3s;
     transition: all 0.3s;
@@ -88,8 +85,6 @@ export const FormLi = styled.li`
 export const GameSelectContainer = styled.div`
     display:flex;
     flex-direction:column;
-    /* align-items:center; */
-
     animation: ${slideOut};
     animation-duration: 0.2s;
 `
@@ -97,7 +92,6 @@ export const AttendeeSelectContainer = styled.div`
     width:180px;
     color: ${colors.white}; 
     padding-right:10px;
-
     animation: ${slideOut};
     animation-duration: 0.2s;
 `

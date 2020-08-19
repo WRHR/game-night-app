@@ -13,11 +13,11 @@ export default function EventGameSelectItem(
     }){
     const [hovered, setHovered] = useState(false)
     const [inLibrary,setInLibrary] = useState(false)
-
+    let gameImage = game.background_image ?  game.background_image : game.background_url
     let gameInfo = {
         id:game.id,
         name: game.name,
-        background_url: game.background_image
+        background_url: gameImage
     }
 
     const handleAddGameToEvent= (e) => {
@@ -65,7 +65,7 @@ export default function EventGameSelectItem(
                         disabled={inLibrary}
                         style={inLibrary? {transition:'all 0.2s',backgroundColor:'green'}:null}
                         >
-                            {inLibrary ? 'Added to Games' : 'Add to Games'}
+                            {inLibrary ? 'Game Added' : 'Add to Games'}
                     </FormButton> 
                     :null}
                 {hovered ? <FormButton onClick={handleAddGameToEvent}>Add to Event</FormButton> :null}
