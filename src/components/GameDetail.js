@@ -14,16 +14,19 @@ export default function GameDetail({game, setShowGameDetail}){
 
     return(
         <GameDetailContainer>
-            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-                <h1 style={{ marginLeft:'50%', transform:'translate(-50%,0%)'}}>{gameDetails.name}</h1>
+            <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start'}}>
+                <h1 style={{ fontSize: '30px',padding:'10px 0', marginLeft:'50%', transform:'translate(-50%,0%)'}}>{gameDetails.name}</h1>
                 <CloseButton onClick={(e)=> setShowGameDetail(null)} >X</CloseButton>
             </div>
             <GameDetailImage src={gameDetails.background_image}>
                 
             </GameDetailImage>
              
-            <p>Description:</p>
-            <GameDescription>{gameDetails.description_raw}</GameDescription>
+            
+            <GameDescription>
+                Description: <br></br>
+                {gameDetails.description_raw}
+            </GameDescription>
             {/* 
             rating    
             website */}

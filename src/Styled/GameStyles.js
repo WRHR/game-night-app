@@ -2,8 +2,14 @@ import styled, {keyframes} from 'styled-components'
 import {colors} from './Colors'
 
 const popIn = keyframes`
-    0% { top: 100%}
-    100% { top: 50%}
+    0% { 
+        top: 100%;
+        visibility:hidden;
+    }
+    100% { 
+        top: 50%;
+        visibility:visibile;
+    }
 `
 
 export const GameImage = styled.div`
@@ -17,6 +23,7 @@ export const GameImage = styled.div`
     align-items:flex-end;
     justify-content:space-between;
     width:100%;
+    cursor:pointer;
 `
 
 export const GameTitleOverlay = styled.h1`
